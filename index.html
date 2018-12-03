@@ -4,9 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>nSuns Calculator</title>
   </head>
   <body>
     <h1>nSuns Calculator</h1>
+
+    <div class="weight-entry">
+      <div class="squat-weight-container">
+        <h5>Squat</h5>
+        <input type="text" class="squat-rm" />
+        <p class="squat-tm">squat tm</p>
+      </div>
+      <div class="bench-weight-container">
+        <h5>Bench</h5>
+
+        <input type="text" class="bench-rm" />
+        <p class="bench-tm">bench tm</p>
+      </div>
+      <div class="deadlift-weight-container">
+        <h5>Deadlift</h5>
+
+        <input type="text" class="deadlift-rm" />
+        <p class="deadlift-tm">deadlift tm</p>
+      </div>
+      <div class="ohp-weight-container">
+        <h5>OHP</h5>
+
+        <input type="text" class="ohp-rm" />
+        <p class="ohp-tm">ohp tm</p>
+      </div>
+      <button class="calculate-weights">calculate weights</button>
+    </div>
+
+    <main>
+      <div class="monday-container">
+        <div class="t1"></div>
+        <div class="t2"></div>
+        <div class="monday-accessories"></div>
+      </div>
+    </main>
   </body>
 </html>
+
+<script>
+  const weightButton = document.querySelector('.calculate-weights');
+  const squatDisplay = document.querySelector('.squat-tm');
+  const benchDisplay = document.querySelector('.bench-tm');
+  const deadliftDisplay = document.querySelector('.deadlift-tm');
+  const ohpDisplay = document.querySelector('.ohp-tm');
+
+  function repMaxConverter(rm) {
+    const tMax = rm * 0.9;
+    return Math.ceil(tMax / 5) * 5;
+  }
+
+  weightButton.addEventListener('click', () => {
+    const squatRM = document.querySelector('.squat-rm').value;
+    const benchRM = document.querySelector('.bench-rm').value;
+    const deadliftRM = document.querySelector('.deadlift-rm').value;
+    const ohpRM = document.querySelector('.ohp-rm').value;
+    const squatTM = repMaxConverter(squatRM);
+    const benchTM = repMaxConverter(benchRM);
+    const deadliftTM = repMaxConverter(deadliftRM);
+    const ohpTM = repMaxConverter(ohpRM);
+    squatDisplay.textContent = squatTM;
+    benchDisplay.textContent = benchTM;
+    deadliftDisplay.textContent = deadliftTM;
+    ohpDisplay.textContent = ohpTM;
+
+    console.log('pressed');
+  });
+</script>
