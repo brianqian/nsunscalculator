@@ -38,10 +38,70 @@
     </div>
 
     <main>
-      <div class="monday-container">
-        <div class="t1"></div>
-        <div class="t2"></div>
-        <div class="monday-accessories"></div>
+      <div class="monday-container day">
+        <div class="title-container">
+          <h2 class="titles day-title">Monday</h2>
+          <h3 class="titles t1-title">Bench</h3>
+          <h3 class="titles t2-title">OHP</h3>
+          <h3 class="titles t3-title">Accessories</h3>
+        </div>
+        <div class="workouts">
+          <div class="set t1">
+            <span class=" set-weight t1-mon-1">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t1">
+            <span class=" set-weight t1-mon-2">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t1">
+            <span class=" set-weight t1-mon-3">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t1">
+            <span class=" set-weight t1-mon-4">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t1">
+            <span class=" set-weight t1-mon-5">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t1">
+            <span class=" set-weight t1-mon-6">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t1">
+            <span class=" set-weight t1-mon-7">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t1">
+            <span class=" set-weight t1-mon-8">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t1">
+            <span class=" set-weight t1-mon-9">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t2">
+            <span class="set-weight t2-mon-1">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t2">
+            <span class="set-weight t2-mon-2">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t2">
+            <span class="set-weight t2-mon-3">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t2">
+            <span class="set-weight t2-mon-4">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t2">
+            <span class="set-weight t2-mon-5">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t2">
+            <span class="set-weight t2-mon-6">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t2">
+            <span class="set-weight t2-mon-7">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t2">
+            <span class="set-weight t2-mon-8">100</span><span class="set-reps"> x 5</span>
+          </div>
+          <div class="set t2">
+            <span class="set-weight t2-mon-9"></span><span class="set-reps"> </span>
+          </div>
+          <div class="t3"></div>
+        </div>
       </div>
     </main>
   </body>
@@ -59,6 +119,13 @@
     return Math.ceil(tMax / 5) * 5;
   }
 
+  function repWeightCalculator(percentage, tm) {
+    const repWeight = tm * percentage;
+    return Math.round(repWeight / 5) * 5;
+  }
+
+  function generateMonday() {}
+
   weightButton.addEventListener('click', () => {
     const squatRM = document.querySelector('.squat-rm').value;
     const benchRM = document.querySelector('.bench-rm').value;
@@ -72,7 +139,7 @@
     benchDisplay.textContent = benchTM;
     deadliftDisplay.textContent = deadliftTM;
     ohpDisplay.textContent = ohpTM;
-
-    console.log('pressed');
+    const mondayWeight = repWeightCalculator(0.75, benchTM);
+    console.log(mondayWeight);
   });
 </script>

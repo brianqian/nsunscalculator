@@ -1,3 +1,7 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .weight-entry {
   display: flex;
   width: auto;
@@ -6,4 +10,94 @@
 
 h1 {
   text-align: center;
+}
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+}
+
+/* div {
+  border: 1px black solid;
+} */
+
+main {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+}
+.monday-container {
+  grid-row: 1;
+}
+
+.day {
+  /* display: grid;
+  grid-template-columns: repeat(22, 1fr);
+  grid-template-rows: repeat(4, 1fr); */
+  display: flex;
+  flex-direction: row;
+}
+
+.title-container {
+  flex: 2;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  align-items: center;
+}
+
+.titles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px black solid;
+  height: 100%;
+}
+.workouts {
+  display: grid;
+  flex: 8;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(11, 100px);
+  align-items: center;
+}
+.day-title {
+  grid-row: 1;
+  flex: 1;
+}
+.t1-title {
+  grid-row: 2;
+  flex: 1;
+}
+.t2-title {
+  grid-row: 3;
+  flex: 1;
+}
+.t3-title {
+  grid-row: 4;
+  flex: 1;
+}
+
+.t1 {
+  grid-row: 2;
+}
+
+.t2 {
+  grid-row: 3;
+}
+
+.t3 {
+  grid-row: 4;
+  flex: 1;
+}
+
+.set {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: span 1;
+  align-content: center;
+  border: 1px black solid;
+  height: 100%;
 }
