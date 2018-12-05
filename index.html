@@ -13,25 +13,25 @@
     <div class="weight-entry">
       <div class="squat-weight-container">
         <h5>Squat</h5>
-        <input type="text" class="squat-rm" />
+        <input type="text" class="squat-rm" value="100" />
         <p class="squat-tm">squat tm</p>
       </div>
       <div class="bench-weight-container">
         <h5>Bench</h5>
 
-        <input type="text" class="bench-rm" />
+        <input type="text" class="bench-rm" value="100" />
         <p class="bench-tm">bench tm</p>
       </div>
       <div class="deadlift-weight-container">
         <h5>Deadlift</h5>
 
-        <input type="text" class="deadlift-rm" />
+        <input type="text" class="deadlift-rm" value="100" />
         <p class="deadlift-tm">deadlift tm</p>
       </div>
       <div class="ohp-weight-container">
         <h5>OHP</h5>
 
-        <input type="text" class="ohp-rm" />
+        <input type="text" class="ohp-rm" value="100" />
         <p class="ohp-tm">ohp tm</p>
       </div>
       <button class="calculate-weights">calculate weights</button>
@@ -41,71 +41,37 @@
       <div class="monday-container day">
         <div class="monday-title-container title-container">
           <h3 class="titles day-title">Monday</h3>
-          <!--
-            <h3 class="titles t1-title">Bench</h3>
-            <h3 class="titles t2-title">OHP</h3>
-          -->
           <h3 class="titles t3-title">Accessories</h3>
         </div>
-        <div class="workouts monday-workouts">
-          <!--
-            <div class="set t1">
-              <span class=" set-weight t1-mon-1">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t1">
-              <span class=" set-weight t1-mon-2">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t1">
-              <span class=" set-weight t1-mon-3">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t1">
-              <span class=" set-weight t1-mon-4">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t1">
-              <span class=" set-weight t1-mon-5">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t1">
-              <span class=" set-weight t1-mon-6">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t1">
-              <span class=" set-weight t1-mon-7">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t1">
-              <span class=" set-weight t1-mon-8">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t1">
-              <span class=" set-weight t1-mon-9">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t2">
-              <span class="set-weight t2-mon-1">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t2">
-              <span class="set-weight t2-mon-2">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t2">
-              <span class="set-weight t2-mon-3">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t2">
-              <span class="set-weight t2-mon-4">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t2">
-              <span class="set-weight t2-mon-5">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t2">
-              <span class="set-weight t2-mon-6">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t2">
-              <span class="set-weight t2-mon-7">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t2">
-              <span class="set-weight t2-mon-8">100</span><span class="set-reps"> x 5</span>
-            </div>
-            <div class="set t2">
-              <span class="set-weight t2-mon-9"></span><span class="set-reps"> </span>
-            </div>
-          -->
-          <div class="t3"></div>
+        <div class="workouts monday-workouts"><div class="t3"></div></div>
+      </div>
+      <div class="tuesday-container day">
+        <div class="tuesday-title-container title-container">
+          <h3 class="titles day-title">Tuesday</h3>
+          <h3 class="titles t3-title">Accessories</h3>
         </div>
+        <div class="workouts tuesday-workouts"><div class="t3"></div></div>
+      </div>
+      <div class="wednesday-container day">
+        <div class="wednesday-title-container title-container">
+          <h3 class="titles day-title">Wednesday</h3>
+          <h3 class="titles t3-title">Accessories</h3>
+        </div>
+        <div class="workouts wednesday-workouts"><div class="t3"></div></div>
+      </div>
+      <div class="thursday-container day">
+        <div class="thursday-title-container title-container">
+          <h3 class="titles day-title">Thursday</h3>
+          <h3 class="titles t3-title">Accessories</h3>
+        </div>
+        <div class="workouts thursday-workouts"><div class="t3"></div></div>
+      </div>
+      <div class="friday-container day">
+        <div class="friday-title-container title-container">
+          <h3 class="titles day-title">Friday</h3>
+          <h3 class="titles t3-title">Accessories</h3>
+        </div>
+        <div class="workouts friday-workouts"><div class="t3"></div></div>
       </div>
     </main>
   </body>
@@ -116,44 +82,44 @@
   let benchRM;
   let deadliftRM;
   let ohpRM;
-  let squatTM;
-  let benchTM;
-  let deadliftTM;
-  let ohpTM;
   let dailySplits = {
+    benchTM: 0,
+    ohpTM: 0,
+    deadliftTM: 0,
+    squatTM: 0,
     monday: {
       lifts: ['Bench', 'OHP'],
       t1Weights: [0.65, 0.75, 0.85, 0.85, 0.85, 0.8, 0.75, 0.7, 0.65],
       t1Reps: [8, 6, 4, 4, 4, 5, 6, 7, '8+'],
-      t2Weights: [0.5, 0.6, 0.7],
+      t2Weights: [0.5, 0.6, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7],
       t2Reps: [6, 5, 3, 5, 7, 4, 6, 8],
     },
     tuesday: {
       lifts: ['Squat', 'Sumo Dead'],
       t1Weights: [0.75, 0.85, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65],
       t1Reps: [5, 3, '1+', 3, 3, 3, 5, 5, '5+'],
-      t2Weights: [0.5, 0.6, 0.7],
+      t2Weights: [0.5, 0.6, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7],
       t2Reps: [5, 5, 3, 5, 7, 4, 6, 8],
     },
     wednesday: {
       lifts: ['OHP', 'Incline Bench'],
       t1Weights: [0.75, 0.85, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65],
       t1Reps: [5, 3, '1+', 3, 3, 3, 5, 5, '5+'],
-      t2Weights: [0.4, 0.5, 0.6],
+      t2Weights: [0.4, 0.5, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6],
       t2Reps: [6, 5, 3, 5, 7, 4, 6, 8],
     },
     thursday: {
       lifts: ['Deadlift', 'Front Squat'],
       t1Weights: [0.75, 0.85, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65],
       t1Reps: [5, 3, '1+', 3, 3, 3, 3, 3, '3+'],
-      t2Weights: [0.35, 0.45, 0.55],
+      t2Weights: [0.35, 0.45, 0.55, 0.55, 0.55, 0.55, 0.55, 0.55],
       t2Reps: [5, 5, 3, 5, 7, 4, 6, 8],
     },
     friday: {
       lifts: ['Bench', 'Close-Grip Bench'],
       t1Weights: [0.75, 0.85, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65],
       t1Reps: [5, 3, '1+', 3, 5, 3, 5, 3, '5+'],
-      t2Weights: [0.35, 0.45, 0.55],
+      t2Weights: [0.4, 0.5, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6],
       t2Reps: [6, 5, 3, 5, 7, 4, 6, 8],
     },
   };
@@ -172,8 +138,7 @@
     const repWeight = tm * percentage;
     return Math.round(repWeight / 5) * 5;
   }
-  function generateDailySplit(day) {
-    console.log(`${day}-title-container`);
+  function generateTitles(day) {
     const titleContainer = document.querySelector(`.${day}-title-container`);
     const t1Title = document.createElement('h3');
     const t2Title = document.createElement('h3');
@@ -183,45 +148,97 @@
     t2Title.classList.add('titles', 't2-title');
     titleContainer.appendChild(t1Title);
     titleContainer.appendChild(t2Title);
+  }
+
+  generateTitles('monday');
+  generateTitles('tuesday');
+  generateTitles('wednesday');
+  generateTitles('thursday');
+  generateTitles('friday');
+
+  function generateDailySplit(day) {
+    //generates t1 split
+    const container = document.querySelector(`.${day}-workouts`);
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
     for (let i = 0; i < 9; i++) {
       const currentSetNode = document.createElement('div');
       const setWeightNode = document.createElement('span');
       const setRepsNode = document.createElement('span');
-      const setWeight = repWeightCalculator();
-      currentSet.classList.add('set', 't1');
-      setWeightNode.classList.add(`set-weight t1-${day}-${i}`);
-      // setWeightNode.textContent = dailySplits[day].t1Weights[i]
+      currentSetNode.appendChild(setWeightNode);
+      currentSetNode.appendChild(setRepsNode);
+      container.appendChild(currentSetNode);
+      let setWeight;
+      currentSetNode.classList.add('set', 't1');
+      setWeightNode.classList.add('set-weight', `t1-${day}-${i + 1}`);
+      setRepsNode.classList.add('set-reps');
+      switch (dailySplits[day].lifts[0]) {
+        case 'Bench':
+          setWeight = repWeightCalculator(dailySplits[day].t1Weights[i], dailySplits.benchTM);
+          break;
+        case 'Deadlift':
+          setWeight = repWeightCalculator(dailySplits[day].t1Weights[i], dailySplits.deadliftTM);
+          break;
+        case 'OHP':
+          setWeight = repWeightCalculator(dailySplits[day].t1Weights[i], dailySplits.ohpTM);
+          break;
+        case 'Squat':
+          setWeight = repWeightCalculator(dailySplits[day].t1Weights[i], dailySplits.squatTM);
+          break;
+      }
+      setWeightNode.textContent = setWeight;
+      setRepsNode.textContent = ` x ${dailySplits[day].t1Reps[i]}`;
+    }
+    //sets t2 lifts
+    for (let i = 0; i < 8; i++) {
+      const currentSetNode = document.createElement('div');
+      const setWeightNode = document.createElement('span');
+      const setRepsNode = document.createElement('span');
+      currentSetNode.appendChild(setWeightNode);
+      currentSetNode.appendChild(setRepsNode);
+      container.appendChild(currentSetNode);
+      let setWeight;
+      currentSetNode.classList.add('set', 't2');
+      setWeightNode.classList.add('set-weight', `t2-${day}-${i + 1}`);
+      setRepsNode.classList.add('set-reps');
+      switch (dailySplits[day].lifts[1]) {
+        case 'Close-Grip Bench':
+        case 'Incline Bench':
+          setWeight = repWeightCalculator(dailySplits[day].t2Weights[i], dailySplits.benchTM);
+          break;
+        case 'Sumo Dead':
+          setWeight = repWeightCalculator(dailySplits[day].t2Weights[i], dailySplits.deadliftTM);
+          break;
+        case 'OHP':
+          setWeight = repWeightCalculator(dailySplits[day].t2Weights[i], dailySplits.ohpTM);
+          break;
+        case 'Front Squat':
+          setWeight = repWeightCalculator(dailySplits[day].t2Weights[i], dailySplits.squatTM);
+          break;
+      }
+      setWeightNode.textContent = setWeight;
+      setRepsNode.textContent = ` x ${dailySplits[day].t2Reps[i]}`;
     }
   }
-
-  // function generateMonday(tm) {
-  //   const mondaySplit = [0.65, 0.75, 0.85, 0.85, 0.85, 0.8, 0.75, 0.7, 0.65];
-  //   const mondayContainer = document.createElement('div');
-  //   const titleContainer = document.createElement('div');
-  //   mondayContainer.classList.add('monday-container', 'day');
-  //   titleContainer.classList.add('title-container');
-
-  //   for (let i = 0; i < mondaySplit.length; i++) {
-  //     const setWeight = document.createElement('span');
-  //     const repWeight1 = repWeightCalculator(mondaySplit[i], tm);
-
-  //     setWeight.classList.add('set-weight', `t1-mon-${i + 1}`);
-  //   }
-  // }
 
   weightButton.addEventListener('click', () => {
     squatRM = document.querySelector('.squat-rm').value;
     benchRM = document.querySelector('.bench-rm').value;
     deadliftRM = document.querySelector('.deadlift-rm').value;
     ohpRM = document.querySelector('.ohp-rm').value;
-    squatTM = repMaxConverter(squatRM);
-    benchTM = repMaxConverter(benchRM);
-    deadliftTM = repMaxConverter(deadliftRM);
-    ohpTM = repMaxConverter(ohpRM);
-    squatDisplay.textContent = squatTM;
-    benchDisplay.textContent = benchTM;
-    deadliftDisplay.textContent = deadliftTM;
-    ohpDisplay.textContent = ohpTM;
+    dailySplits.squatTM = repMaxConverter(squatRM);
+    dailySplits.benchTM = repMaxConverter(benchRM);
+    dailySplits.deadliftTM = repMaxConverter(deadliftRM);
+    dailySplits.ohpTM = repMaxConverter(ohpRM);
+    squatDisplay.textContent = dailySplits.squatTM;
+    benchDisplay.textContent = dailySplits.benchTM;
+    deadliftDisplay.textContent = dailySplits.deadliftTM;
+    ohpDisplay.textContent = dailySplits.ohpTM;
     generateDailySplit('monday');
+    generateDailySplit('tuesday');
+    generateDailySplit('wednesday');
+    generateDailySplit('thursday');
+    generateDailySplit('friday');
   });
 </script>

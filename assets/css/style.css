@@ -12,6 +12,7 @@ h3 {
 main {
   display: grid;
   grid-template-rows: repeat(5, 1fr);
+  grid-gap: 2rem;
 }
 
 .weight-entry {
