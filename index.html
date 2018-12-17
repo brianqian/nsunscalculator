@@ -11,28 +11,27 @@
     <h1>nSuns Calculator</h1>
 
     <div class="weight-entry">
-      <div class="squat-weight-container">
+      <div class="rm-title">1RM</div>
+      <div class="tm-title">1TM</div>
+      <div class="weight-container squat-weight-container">
         <h5>Squat</h5>
         <input type="text" class="squat-rm" value="100" />
-        <p class="squat-tm">squat tm</p>
+        <p class="squat-tm">0</p>
       </div>
-      <div class="bench-weight-container">
+      <div class="weight-container bench-weight-container">
         <h5>Bench</h5>
-
         <input type="text" class="bench-rm" value="100" />
-        <p class="bench-tm">bench tm</p>
+        <p class="bench-tm">0</p>
       </div>
-      <div class="deadlift-weight-container">
+      <div class="weight-container deadlift-weight-container">
         <h5>Deadlift</h5>
-
         <input type="text" class="deadlift-rm" value="100" />
-        <p class="deadlift-tm">deadlift tm</p>
+        <p class="deadlift-tm">0</p>
       </div>
-      <div class="ohp-weight-container">
+      <div class="weight-container ohp-weight-container">
         <h5>OHP</h5>
-
         <input type="text" class="ohp-rm" value="100" />
-        <p class="ohp-tm">ohp tm</p>
+        <p class="ohp-tm">0</p>
       </div>
       <button class="calculate-weights">calculate weights</button>
     </div>
@@ -78,6 +77,11 @@
 </html>
 
 <script>
+  fetch('/api/load')
+    .then(resp => resp.json())
+    .then(resp => {
+      console.log(resp);
+    });
   let squatRM;
   let benchRM;
   let deadliftRM;
@@ -123,6 +127,8 @@
       t2Reps: [6, 5, 3, 5, 7, 4, 6, 8],
     },
   };
+
+  //querySelectors for TMs and weightButton
   const weightButton = document.querySelector('.calculate-weights');
   const squatDisplay = document.querySelector('.squat-tm');
   const benchDisplay = document.querySelector('.bench-tm');
@@ -223,6 +229,7 @@
   }
 
   weightButton.addEventListener('click', () => {
+    //takes in 1RM and creates TM conversion
     squatRM = document.querySelector('.squat-rm').value;
     benchRM = document.querySelector('.bench-rm').value;
     deadliftRM = document.querySelector('.deadlift-rm').value;
@@ -240,5 +247,20 @@
     generateDailySplit('wednesday');
     generateDailySplit('thursday');
     generateDailySplit('friday');
+
+    fetch('/api/save', {
+      method: POST,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: {
+        squatRM,
+        benchRM,
+        deadliftRM,
+        ohpRM,
+      },
+    }).then(resp => {
+      console.log(resp);
+    });
   });
 </script>
