@@ -12,7 +12,7 @@
 
     <div class="weight-entry">
       <div class="rm-title">1RM</div>
-      <div class="tm-title">1TM</div>
+      <div class="tm-title">TM</div>
       <div class="weight-container squat-weight-container">
         <h5>Squat</h5>
         <input type="text" class="squat-rm" value="100" />
@@ -77,11 +77,33 @@
 </html>
 
 <script>
-  fetch('/api/load')
-    .then(resp => resp.json())
-    .then(resp => {
-      console.log(resp);
-    });
+  const userCookie = document.cookie;
+  let userId = userCookie.split('=')[1];
+
+  console.log(userCookie);
+  console.log(userId);
+  if (userId) {
+    fetch(`/api/?user=${userId}`)
+      .then(resp => resp.json())
+      .then(resp => {
+        console.log(resp[0]);
+        document.querySelector('.squat-rm').value = resp[0].squatRM;
+        document.querySelector('.bench-rm').value = resp[0].benchRM;
+        document.querySelector('.ohp-rm').value = resp[0].ohpRM;
+        document.querySelector('.deadlift-rm').value = resp[0].deadliftRM;
+        calculateWeights();
+      });
+  } else {
+    fetch('/api/create')
+      .then(resp => resp.json())
+      .then(resp => {
+        console.log(resp);
+        document.cookie = `id=${resp};max-age=99999999`;
+        userId = resp;
+        calculateWeights();
+      });
+  }
+
   let squatRM;
   let benchRM;
   let deadliftRM;
@@ -228,7 +250,8 @@
     }
   }
 
-  weightButton.addEventListener('click', () => {
+  function calculateWeights() {
+    console.log('RUNNING CALCULATE WEIGHTS');
     //takes in 1RM and creates TM conversion
     squatRM = document.querySelector('.squat-rm').value;
     benchRM = document.querySelector('.bench-rm').value;
@@ -248,19 +271,21 @@
     generateDailySplit('thursday');
     generateDailySplit('friday');
 
-    fetch('/api/save', {
-      method: POST,
+    fetch(`/api/save/?user=${userId}`, {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: {
+      body: JSON.stringify({
         squatRM,
         benchRM,
         deadliftRM,
         ohpRM,
-      },
+      }),
     }).then(resp => {
       console.log(resp);
     });
-  });
+  }
+
+  weightButton.addEventListener('click', () => calculateWeights());
 </script>
